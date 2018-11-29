@@ -1,0 +1,55 @@
+body, html {
+	height: 100%;
+	margin: 0px;
+}
+
+.bg {
+    /* The image used */
+    background-image: url("img.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+	position: relative;
+}
+
+.img1 {
+	height: 15%;
+	position: absolute;
+	left: 10%;
+}
+
+.img2 {
+	height: 45%;
+	position: absolute;
+	left: 40%;
+}
+
+.logo {
+	position: fixed;
+	left: 50%;
+	bottom: 18%;
+	margin-left: -110px;
+}
+
+.text {
+	color: white;
+	font-size: 68px;
+	position: absolute;
+	bottom: -5%;
+	left: 33%;
+}
+
+.text2 {
+	color: white;
+	font-size: 68px;
+	position: absolute;
+	bottom: -5%;
+	left: 50%;
+}

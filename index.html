@@ -1,0 +1,45 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+	</head>
+
+	<link rel="stylesheet" href="styles.css">
+	<body>
+		<div class="bg">
+			<img src="img1.png" class="img1" id="flower1"></img>
+			<img src="img3.png" class="img2" id="flower2"></img>
+			<img src="logo2.png" class="logo"></img>
+			<p class="text">Escape</p>
+			<p class="text2" id="movingText">the flowers</p>
+		</div>
+	</body>
+
+	<script type="text/javascript">
+		var frames = 0;
+		var flower1 = document.getElementById("flower1");
+		var flower2 = document.getElementById("flower2");
+		var text = document.getElementById("movingText");
+		window.setInterval(function() {
+			frames++;
+
+			var v1=0, v2=0, v3=0;
+			if (frames <= 600) {
+				v1 = 50 - (frames * .03);
+				v2 = 40 - (frames * .04);
+				v3 = 52 - (frames * .007);
+			} else {
+				var aft = frames - 600;
+				v1 = 50 - (600 * .03);
+				v2 = 40 - (600 * .04);
+				v3 = 50 - (600 * .009);
+
+				v1 -= aft * 1;
+				v2 -= aft * 1;
+				v3 -= aft * 1;
+			}
+			flower1.style.left = v1 + "%";
+			flower2.style.left = v2 + "%";
+			text.style.left = v3 + "%";
+	}, 1000/60.0);
+	</script>
+</html>
