@@ -25,7 +25,7 @@ h1{
 }
 
 .nav ul li{
-    float: left;
+    float: left; /*change list to horizontal display*/
     margin-top: 15px;
 }
 

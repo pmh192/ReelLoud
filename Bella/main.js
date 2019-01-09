@@ -1,5 +1,37 @@
-var apply = document.getElementById('apply');
+var wWidth = window.innerWidth;
+var wHeight = window.innerHeight;
 var div = document.querySelector('div');
+
+var home = document.getElementById('home');
+home.onmouseover = function(){
+    div.innerHTML = '';
+    var p = document.createElement('p');
+    div.appendChild(p);
+    var a = document.createElement('a');
+    a.setAttribute('target', '_blank');
+    a.setAttribute('href', '#');
+    a.textContent = "Tickets";
+    p.appendChild(a);
+    var img = document.createElement('img');
+    img.setAttribute('src', 'poster.jpg');
+    img.setAttribute('align', 'right');
+    div.appendChild(img);
+    var a1 = document.createElement('a');
+    a1.setAttribute('target', '_blank');
+    a1.setAttribute('href', '#');
+    a1.setAttribute('class', 'fa fa-facebook');
+
+    var a2 = document.createElement('a');
+    a2.setAttribute('target', '_blank');
+    a2.setAttribute('href', '#');
+    a2.setAttribute('class', 'fa fa-instagram');
+
+    div.appendChild(a1);
+    div.appendChild(a2);
+
+}
+
+var apply = document.getElementById('apply');
 apply.onmouseover = function(){
     div.innerHTML = '';
     var para = document.createElement('p');
@@ -50,4 +82,38 @@ rules.onmouseover = function(){
     }
     p1.appendChild(ul);
     
+}
+
+var contact = document.getElementById('contact');
+var contactInfos = [['Mika Pham', 'Director', 'Email: mikaphams@ucsb.edu', 'Number: 999-999-9999'], ['Jake Ortega', 'Director', 'Email: jakeortega@ucsb.edu', 'Number: 000-000-0000']]
+contact.onmouseover = function(){
+    div.innerHTML = '';
+    for(let k = 0; k < contactInfos.length; k++){
+        var img = document.createElement('img');
+                img.setAttribute('src', contactInfos[k][0] +'.jpg');
+                img.style.position = 'absolute';
+                img.style.width = 10 + '%';
+                img.style.left =  + wWidth*0.3 + 'px';
+                img.style.top = wHeight* 0.25 + 250*k + 'px';
+        for(let i = 0; i < contactInfos[k].length; i++){
+            var p = document.createElement('p');
+            p.textContent = contactInfos[k][i];
+            p.style.color = "white";
+            p.style.position = 'relative';
+            p.style.left = wWidth*0.6 + 'px';
+            p.style.fontFamily = "Comic Sans MS, cursive, sans-serif";
+            if(i == 0){p.style.fontWeight = 'bold'; p.style.fontSize = '2rem';}
+            else{p.style.fontSize = '1rem'}
+            div.appendChild(img);
+            div.appendChild(p);
+            
+        }
+
+    }
+    
+    
+    
+    
+  
+
 }
