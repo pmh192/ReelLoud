@@ -1,38 +1,43 @@
-body, html {
+html {
 	height: 100%;
 	margin: 0px;
 }
 
+body {
+	margin: 0px;
+}
+
 .bg {
-    /* The image used */
-    background-image: url("img.jpg");
+	/* The image used */
+	background-image: url("img.jpg");
 
-    /* Full height */
-    height: 100%; 
+	/* Full height */
+	height: 100%; 
 
 
-    /* Center and scale the image nicely */
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+	/* Center and scale the image nicely */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
 
 	position: relative;
+	/*background-color: black;*/
 }
 
 .img1 {
 	height: 15%;
-	position: absolute;
+	position: relative;
 	left: 10%;
 }
 
 .img2 {
 	height: 45%;
-	position: absolute;
+	position: relative;
 	left: 40%;
 }
 
 .logo {
-	position: fixed;
+	position: relative;
 	left: 50%;
 	bottom: 18%;
 	margin-left: -110px;
@@ -42,7 +47,7 @@ body, html {
 	color: white;
 	font-size: 68px;
 	position: absolute;
-	bottom: -5%;
+	bottom: 0%;
 	left: 33%;
 }
 
@@ -50,6 +55,80 @@ body, html {
 	color: white;
 	font-size: 68px;
 	position: absolute;
-	bottom: -5%;
+	bottom: 0%;
 	left: 50%;
+}
+
+.frame {
+	white-space: nowrap; /* this is required unless you put the helper span closely near the img */
+	text-align: center; margin: 1em 0;
+}
+
+.helper {
+	display: inline-block;
+	height: 100%;
+	vertical-align: middle;
+}
+
+.centerVert {
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.heading {
+	font-size: 68px;
+}
+
+.para {
+	color: white;
+}
+
+.tickets {
+	font-size: 3rem;
+    color: white;
+    font-family: 'Courier New', Courier, monospace;
+    text-decoration: none;
+    padding: 30px;
+    position: relative;
+    top: 30px;
+    border: 5px solid white;
+    border-radius: 30px;
+}
+
+.navlink {
+	position: relative;
+	top: 35px;
+}
+
+.navlinkContainer, .navlinkContainerActive {
+	height: 100px;
+	background-color: black;
+}
+
+.navlinkContainerActive:hover {
+	background-color: darkblue;
+	cursor: pointer;
+}
+
+.textBg {
+	height: 100%;
+	background-color: black;
+}
+
+.aboutText {
+	color: white;
+	text-align: left;
+	font-size: 18px;
+}
+
+.aboutTextContainer {
+	width: 65%;
+}
+
+p, li {
+	color: white;
 }

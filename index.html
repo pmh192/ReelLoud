@@ -1,45 +1,134 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Reel Loud</title>
 	</head>
 
 	<link rel="stylesheet" href="styles.css">
-	<body>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+	<body onresize="onResize()">
 		<div class="bg">
-			<img src="img1.png" class="img1" id="flower1"></img>
-			<img src="img3.png" class="img2" id="flower2"></img>
-			<img src="logo2.png" class="logo"></img>
-			<p class="text">Escape</p>
-			<p class="text2" id="movingText">the flowers</p>
+			<div id="carouselContainer" class="carousel slide h-100" data-ride="carousel" data-interval="false">
+				<div class="carousel-inner h-100">
+					<div class="carousel-item h-100 active">
+						<div class="container-fluid h-100">
+							<div class="row h-100">
+								<div class="col-2"></div>
+								<div class="col-4">
+									<div id="page1Left" class="centerVert">
+										<div class="h-50">
+											<center><a class="tickets" href="#">Tickets</a></center>
+										</div>
+										<div class="h-50">
+											asdf
+										</div>
+									</div>
+								</div>
+								<div class="col-4">
+								    <img id="poster" class="d-block w-100 centerVert" src="Bella/poster.jpg">
+								</div>
+								<div class="col-2"></div>
+							</div>
+						</div>
+					</div>
+
+					<div class="carousel-item h-100">
+						<img src="img1.png" class="img1" id="flower1"></img>
+						<img src="img3.png" class="img2" id="flower2"></img>
+						<p class="text">Escape</p>
+						<p class="text2" id="movingText">the flowers</p>
+					</div>
+
+					<div class="carousel-item h-100">
+						<div class="container-fluid h-100">
+							<div class="row h-100">
+								<div class="col-2"></div>
+								<div class="col-8 h-100">
+									<div class="h-25"></div>
+									<p class="heading para">Page 3</p>
+									<p class="para">blah blab blah</p>
+								</div>
+								<div class="col-2"></div>
+							</div>
+						</div>
+					</div>
+			  	</div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-1 navlinkContainer"></div>
+
+			<div class="col-2 navlinkContainerActive" onclick="location.href='index.html'">
+				<center><a class="navlink centerVert" href="index.html">Home</a></center>
+			</div>
+
+			<div class="col-2 navlinkContainerActive" onclick="location.href='applicants.html'">
+				<center><a class="navlink centerVert" href="applicants.html">Applicants</a></center>
+			</div>
+
+			<div class="col-2 navlinkContainerActive" onclick="location.href='rules.html'">
+				<center><a class="navlink centerVert" href="rules.html">Rules</a></center>
+			</div>
+
+			<div class="col-2 navlinkContainerActive" onclick="location.href='about.html'">
+				<center><a class="navlink centerVert" href="about.html">About</a></center>
+			</div>
+
+			<div class="col-2 navlinkContainerActive" onclick="location.href='contact.html'">
+				<center><a class="navlink centerVert" href="contact.html">Contact</a></center>
+			</div>
+			<div class="col-1 navlinkContainer"></div>
 		</div>
 	</body>
 
 	<script type="text/javascript">
-		var frames = 0;
+
+		var totalFrames = 0;
+		var pages = 3;
+		var page = 0;
+
+		var frames = [];
+		for (var i = 0; i < pages; i++) {
+			frames.push(0);
+		}
+
+		function onResize() {
+			$('#page1Left').height($("#poster").height());
+		}
+		onResize();
+
+
+
 		var flower1 = document.getElementById("flower1");
 		var flower2 = document.getElementById("flower2");
 		var text = document.getElementById("movingText");
+		var container = document.getElementById("container");
 		window.setInterval(function() {
-			frames += 1;
+			frames[page] += 1;
+			totalFrames += 1;
 
-			var v1=0, v2=0, v3=0;
-			if (frames <= 600) {
-				v1 = 50 - (frames * .03);
-				v2 = 40 - (frames * .04);
-				v3 = 52 - (frames * .007);
-			} else {
-				var aft = frames - 600;
-				v1 = 50 - (600 * .03);
-				v2 = 40 - (600 * .04);
-				v3 = 50 - (600 * .009);
+			var frame = frames[page];
 
-				v1 -= aft * 1;
-				v2 -= aft * 1;
-				v3 -= aft * 1;
+			if (page == 1) {
+				v1 = 50 - (frame * .03);
+				v2 = 40 - (frame * .04);
+				v3 = 52 - (frame * .007);
+		
+				flower1.style.left = v1 + "%";
+				flower2.style.left = v2 + "%";
+				text.style.left = v3 + "%";
 			}
-			flower1.style.left = v1 + "%";
-			flower2.style.left = v2 + "%";
-			text.style.left = v3 + "%";
+
+			if (totalFrames >= 60*5) {
+				page = (page + 1) % pages;
+				frames[page] = 0;
+				totalFrames = 0;
+				$('#carouselContainer').carousel('next')
+			}
 	}, 1000/60.0);
 	</script>
 </html>
