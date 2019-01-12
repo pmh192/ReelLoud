@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Door3</title>
+    <style>
+        html{
+            background-color: white;
+            margin:0;
+            overflow: hidden;
+        }
+        @font-face {
+            font-family: 'engebrechtreexpanded';
+            src: url('engebrechtre ex.ttf'); 
+                
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        div p{
+            position: absolute;
+            color: #7B1600;
+            font-family: 'engebrechtreexpanded';
+            font-size: 50px;
+            left: 55%;
+            top: 45%;
+        }
+        #logo{
+            position:absolute;
+            top: -20px;
+        }
+        #left{
+            width: 30%;
+            position: absolute;
+            top: 100px;
+            left: 470px;
+            transition: transform 5s;
+            transform-origin: left;
+        }
+        #right{
+            width: 30%;
+            position: absolute;
+            top: 100px;
+            right: 45px;
+            transition: transform 5s;
+            transform-origin: right;
+
+        } 
+        
+        .nav ul{
+            list-style: none;
+            float:left;
+            position: absolute;
+            bottom:0;
+            margin:0 auto;
+            padding:0;
+            width: 100%;
+            background: rgba(228, 123, 131, 0.5);
+            height: 60px;
+        }
+
+        .nav ul li{
+            float: left; 
+            width: 32%;
+        }
+
+        .nav ul li button{
+            padding:10px;
+            width:100%;
+            background-color: transparent;
+            color: white;
+            border:none;
+            text-decoration: none;
+            font-family: 'engebrechtreexpanded';
+            font-size: 30px;
+            text-align: center;
+        }
+
+
+        .nav ul li button:hover{
+            background-color: rgba(205,92,92,0.7);
+            transition: 0.8s;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <img id="logo" src="logo.png" width="20%">
+        <p>Coming soon...</p>
+        <img id="left" src="leftGate.png" width="20%">
+        <img id="right" src="rightGate.png" width= "20%">
+        
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li> <button id="about">About</button> </li>
+            <li> <button id="rules">Rules</button> </li>
+            <li> <button id="contacts">Contacts</button> </li>
+        </ul>
+    </nav>
+</body>
+<script>
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    left.onmouseover = function(){
+        left.style.transform = "scale(0.5, 1)";
+        right.style.transform = "scale(0.5, 1)";
+    }
+    right.onmouseover = function(){
+        left.style.transform = "scale(0.5, 1)";
+        right.style.transform = "scale(0.5, 1)";
+    }
+    left.onmouseleave = function(){
+        left.style.transform = "scale(1, 1)";
+        right.style.transform = "scale(1, 1)";
+    }
+    right.onmouseleave = function(){
+        left.style.transform = "scale(1, 1)";
+        right.style.transform = "scale(1, 1)";
+    }
+</script>
+</html>
