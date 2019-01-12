@@ -1,34 +1,45 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>REEL LOUD film festival</title>
-</head>
-<body>
-    <h1>REEL LOUD</h1>
-    <nav class="nav">
-        <ul>
-            <li> <button id="home">Home</button> </li>
-            <li> <button id="apply">Apply</button> </li>
-            <li> <button id="rules">Rules</button> </li>
-            <li> <button id="about">About</button> </li>
-            <li> <button id="contact">Contact</button> </li>
-        </ul>
-    </nav>
-    <div class="content">
-        <p> <a target="_blank" href="#">Tickets</a></p>
-        <img src="poster.jpg" align="right">
-        <a target="_blank" href="#" class="fa fa-facebook"></a>
-        <a target="_blank" href="#" class="fa fa-instagram"></a>
-        
-    </div>
-    
-    <script src="main.js">
-    </script>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="style1.css">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet"> 
+		<title>REEL LOUD film festival</title>
+	</head>
+	<body>
+		<div class="bg">
+			<img src="pictures/img1.jpg" class="img1" id="flower1"></img>
+			<img src="pictures/img3.png" class="img2" id="flower2"></img>
+			<img src="pictures/logo2.png" class="logo"></img>
+			<p class="text"><a href="content.html">Escape</a></p>
+			<p class="text2" id="movingText">the flowers</p>
+	</body>
 
-</body>
+	<script type="text/javascript">
+		var frames = 0;
+		var flower1 = document.getElementById("flower1");
+		var flower2 = document.getElementById("flower2");
+		var text = document.getElementById("movingText");
+		window.setInterval(function() {
+			frames += 1;
+			var v1=0, v2=0, v3=0;
+			if (frames <= 600) {
+				v1 = 50 - (frames * .03);
+				v2 = 40 - (frames * .04);
+				v3 = 52 - (frames * .007);
+			} else {
+				var aft = frames - 600;
+				v1 = 50 - (600 * .03);
+				v2 = 40 - (600 * .04);
+				v3 = 50 - (600 * .009);
+				v1 -= aft * 1;
+				v2 -= aft * 1;
+				v3 -= aft * 1;
+			}
+			flower1.style.left = v1 + "%";
+			flower2.style.left = v2 + "%";
+			text.style.left = v3 + "%";
+	}, 1000/60.0);
+	</script>
 </html>

@@ -1,0 +1,83 @@
+body{
+    background: url('pictures/space2.jpg');
+    background-size: cover;
+	margin: 0px;
+}
+
+@font-face {
+    font-family: 'engebrechtreexpanded';
+    src: url('fonts/engebrechtre ex.ttf'); 
+         
+    font-weight: normal;
+    font-style: normal;
+
+}
+/*
+@font-face {
+    font-family: 'ubuntu_condensedregular';
+    src: url('UbuntuCondensed-Regular.tff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+*/
+.bg {
+    /* The image used */
+    /*background-image: url("pictures/space2.jpg");*/
+
+    /* Full height */
+    height: 100%; 
+
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+	position: relative;
+}
+
+.img1 {
+	height: 15%;
+	position: absolute;
+	left: 10%;
+}
+
+.img2 {
+	height: 45%;
+	position: absolute;
+	left: 40%;
+}
+
+.logo {
+	position: fixed;
+	left: 13%;
+	top:40%;
+	margin-left: -110px;
+}
+
+.bg .text a{
+    font-size: 3rem;
+    color: white;
+    /*font-family: 'Courier New', Courier, monospace;*/
+    font-family: engebrechtreexpanded;
+    text-decoration: none;
+    padding: 30px;
+    position: fixed;
+    top: 68%; left:2%;
+    border: 5px solid white;
+    border-radius: 30px;
+
+}
+div p a:hover{
+    background-color: rgba(255, 255, 102, 0.4);
+}
+
+.text2 {
+    color: white;
+    font-family: 'Ubuntu Condensed', sans-serif;
+	font-size: 68px;
+	position: absolute;
+	bottom: -5%;
+	left: 50%;
+}
