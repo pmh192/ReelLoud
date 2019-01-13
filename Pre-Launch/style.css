@@ -21,7 +21,11 @@ p {
     color: #7B1600;
     font-family: 'engebrechtreexpanded';
     font-size: 50px;
-    top: 300px;
+}
+
+
+.relative {
+    position: relative;
 }
 
 .width-100 {
@@ -35,7 +39,7 @@ p {
 #left{
     width: 30%;
     position: absolute;
-    top: 100px;
+    top: 20%;
     left: 20%;
     transition: transform 5s;
     transform-origin: left;
@@ -43,7 +47,7 @@ p {
 #right{
     width: 30%;
     position: absolute;
-    top: 100px;
+    top: 20%;
     right: 20%;
     transition: transform 5s;
     transform-origin: right;

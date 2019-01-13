@@ -6,11 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Door3</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 </head>
-<body>
+<body onresize="alignText()">
     <img id="logo" src="logo.png" width="10%">
     <div class="width-100">
-        <center class="width-100"><p class="width-100">Coming soon...</p></center>
+        <center class="width-100 relative"><p id="comingSoon" class="width-100">Coming soon...</p></center>
         <img id="left" src="leftGate.png" width="20%">
         <img id="right" src="rightGate.png" width= "20%">
         
@@ -43,5 +45,17 @@
         left.style.transform = "scale(1, 1)";
         right.style.transform = "scale(1, 1)";
     }
+
+    function alignText() {
+        var left = $("#left");
+        var cs = $("#comingSoon");
+        console.log(cs.height());
+        var textTop = left.position().top + left.height()/2 - cs.height()/2;
+
+        cs.css({top: textTop, left: 0, position:'fixed'});
+    }
+
+    alignText();
+
 </script>
 </html>
