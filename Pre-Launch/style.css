@@ -1,0 +1,107 @@
+html{
+    background-color: white;
+    margin:0;
+}
+
+body {
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'engebrechtreexpanded';
+    src: url('engebrechtre ex.ttf');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'UbuntuCondensedFont';
+    src: url('UbuntuCondensed-Regular.ttf');
+
+    font-weight: normal;
+    font-style: normal;
+}
+
+.comingSoon {
+    position: absolute;
+    color: #7B1600;
+    font-family: 'engebrechtreexpanded';
+    font-size: 50px;
+}
+
+.aboutTextContainer {
+    width: 70%;
+    margin-left: 15%;
+}
+
+.aboutTextContainer > p {
+    font-family: 'UbuntuCondensedFont';
+    font-size: 24px;
+}
+
+.relative {
+    position: relative;
+}
+
+.width-100 {
+    width: 100%;
+}
+
+#logo{
+    margin-left: 1.5%;
+    margin-top: 1.5%;
+}
+#left{
+    width: 30%;
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    transition: transform 5s;
+    transform-origin: left;
+}
+#right{
+    width: 30%;
+    position: absolute;
+    top: 20%;
+    right: 20%;
+    transition: transform 5s;
+    transform-origin: right;
+
+}
+
+.nav ul{
+    list-style: none;
+    float:left;
+    position: fixed;
+    bottom:0;
+    margin:0 auto;
+    padding:0;
+    width: 100%;
+    background: rgba(228, 123, 131, 0.5);
+    height: 60px;
+}
+
+.nav ul li{
+    float: left;
+    width: 25%;
+}
+
+.nav ul li button{
+    padding:10px;
+    width:100%;
+    background-color: transparent;
+    color: white;
+    border:none;
+    text-decoration: none;
+    font-family: 'engebrechtreexpanded';
+    font-size: 30px;
+    text-align: center;
+}
+
+
+.nav ul li button:hover{
+    background-color: rgba(205,92,92,0.7);
+    transition: 0.8s;
+    cursor: pointer;
+}

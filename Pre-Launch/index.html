@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reel Loud</title>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+</head>
+<body onresize="alignText()">
+    <img id="logo" src="logo.png" width="10%">
+    <div class="width-100">
+        <center class="width-100 relative"><p id="comingSoon" class="comingSoon width-100">Coming soon...</p></center>
+        <img id="left" src="leftGate.png" width="20%">
+        <img id="right" src="rightGate.png" width= "20%">
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li> <button onclick="location.href='index.html'" id="home">Home</button> </li>
+            <li> <button onclick="location.href='about.html'" id="about">About</button> </li>
+            <li> <button onclick="location.href='rules.html'" id="rules">Rules</button> </li>
+            <li> <button onclick="location.href='contact.html'" id="contacts">Contact</button> </li>
+        </ul>
+    </nav>
+</body>
+<script>
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    left.onmouseover = function(){
+        left.style.transform = "scale(0.5, 1)";
+        right.style.transform = "scale(0.5, 1)";
+    }
+    right.onmouseover = function(){
+        left.style.transform = "scale(0.5, 1)";
+        right.style.transform = "scale(0.5, 1)";
+    }
+    left.onmouseleave = function(){
+        left.style.transform = "scale(1, 1)";
+        right.style.transform = "scale(1, 1)";
+    }
+    right.onmouseleave = function(){
+        left.style.transform = "scale(1, 1)";
+        right.style.transform = "scale(1, 1)";
+    }
+
+    function alignText() {
+        var left = $("#left");
+        var cs = $("#comingSoon");
+        console.log(cs.height());
+        var textTop = left.position().top + left.height()/2 - cs.height()/2;
+
+        cs.css({top: textTop, left: 0, position:'fixed'});
+    }
+
+    alignText();
+
+</script>
+</html>
