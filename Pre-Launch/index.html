@@ -7,24 +7,53 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Reel Loud</title>
 
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </head>
 <body onresize="alignText()">
-    <img id="logo" src="logo.png" width="10%">
     <div class="width-100">
         <center class="width-100 relative"><p id="comingSoon" class="comingSoon width-100">Coming soon...</p></center>
-        <img id="left" src="leftGate.png" width="20%">
-        <img id="right" src="rightGate.png" width= "20%">
+        <img id="left" onload="alignText()" src="leftGate.png" width="20%">
+        <img id="right" onload="alignText()" src="rightGate.png" width= "20%">
     </div>
 
-    <nav class="nav">
+   <!--  <nav class="nav">
         <ul>
             <li> <button onclick="location.href='index.html'" id="home">Home</button> </li>
             <li> <button onclick="location.href='about.html'" id="about">About</button> </li>
+            <li><img id="logo" src="logo.png"></li>
             <li> <button onclick="location.href='rules.html'" id="rules">Rules</button> </li>
             <li> <button onclick="location.href='contact.html'" id="contacts">Contact</button> </li>
         </ul>
-    </nav>
+    </nav> -->
+
+    <div class="w-100 margin-0 padding-0 row bottom">
+        <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+        <div class="col-md-2 col-sm-12 navlinkContainerActive" onclick="location.href='index.html'">
+            <center><a class="navlink centerVert">Home</a></center>
+        </div>
+
+        <div class="col-md-2 col-sm-12 navlinkContainerActive" onclick="location.href='about.html'">
+            <center><a class="navlink centerVert">About</a></center>
+        </div>
+
+        <div class="col-md-2 col-sm-12">
+            <center><img src="logo.png" class="w-50"></center>
+        </div>
+
+        <div class="col-md-2 col-sm-12 navlinkContainerActive" onclick="location.href='rules.html'">
+            <center><a class="navlink centerVert">Rules</a></center>
+        </div>
+
+        <div class="col-md-2 col-sm-12 navlinkContainerActive" onclick="location.href='contact.html'">
+            <center><a class="navlink centerVert">Contact</a></center>
+        </div>
+        <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+    </div>
 </body>
 <script>
     var left = document.getElementById('left');

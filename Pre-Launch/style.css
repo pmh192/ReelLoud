@@ -70,7 +70,33 @@ body {
 
 }
 
-.nav ul{
+.bottom {
+    position: fixed;
+    bottom: 0;
+}
+
+.margin-0 {
+    margin: 0px !important;
+}
+
+.padding-0 {
+    padding: 0px !important;
+}
+
+.root {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.content {
+    overflow: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+
+.navlinkContainer, .navlinkContainerActive {
     list-style: none;
     float:left;
     position: fixed;
@@ -79,19 +105,13 @@ body {
     padding:0;
     width: 100%;
     background: rgba(228, 123, 131, 0.5);
-    height: 60px;
 }
 
-.nav ul li{
-    float: left;
-    width: 25%;
-}
-
-.nav ul li button{
+.navlinkContainerActive a {
     padding:10px;
     width:100%;
     background-color: transparent;
-    color: white;
+    color: white !important;
     border:none;
     text-decoration: none;
     font-family: 'engebrechtreexpanded';
@@ -100,8 +120,70 @@ body {
 }
 
 
-.nav ul li button:hover{
+.navlinkContainerActive:hover{
     background-color: rgba(205,92,92,0.7);
     transition: 0.8s;
+    cursor: pointer;
+}
+
+.input {
+    width: 328px;
+    height: 18px;
+    font-family: ingra, sans-serif;
+    font-style: italic;
+    font-weight: 200;
+    padding: 6px;
+    min-height: 0px;
+}
+
+.label {
+    color: #6B6B6B;
+    text-align: left;
+    font-size: 18px;
+    line-height: 18px;
+    font-family: ingra, sans-serif;
+    font-weight: 400;
+}
+
+.contact {
+    width: 30%;
+    margin-left: 35%;
+}
+
+.textarea {
+    width: 328px;
+    height: 68px;
+    color: #C4C4C4;
+    font-family: ingra, sans-serif;
+    font-style: italic;
+    font-weight: 200;
+    padding: 6px;
+    min-height: 0px;
+}
+
+.submit {
+        margin: 0px;
+    padding: 0px;
+    border-width: 0px;
+    border-style: solid;
+    border-color: transparent;
+    transform-origin: left top;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+        width: 129px;
+    height: 22px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #6B6B6B;
+    background-color: #FFFFFF;
+    border-radius: 2px;
+    color: #6B6B6B;
+    text-align: center;
+    line-height: 14px;
+    font-family: Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+    padding: 7px 0px 0px;
     cursor: pointer;
 }
