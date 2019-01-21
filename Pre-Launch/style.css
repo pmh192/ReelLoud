@@ -38,6 +38,7 @@ body {
 .aboutTextContainer > p {
     font-family: 'UbuntuCondensedFont';
     font-size: 24px;
+    letter-spacing: 2px;
 }
 
 .relative {
