@@ -105,7 +105,7 @@ body {
     margin:0 auto;
     padding:0;
     width: 100%;
-    background: rgba(228, 123, 131, 0.5);
+    background: rgba(128,0,0,1);
 }
 
 .navlinkContainerActive a {
