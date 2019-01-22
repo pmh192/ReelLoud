@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>About</title>
+
+</head>
+<body onresize="shrinkWhoWeAre()">
+    <div class="aboutAll">
+        <p><img id="logo" src="logo.png" width="20%"></p>
+        <p><img id="whoweare" src="whoweare.png"></p>
+
+        <div class="aboutText">
+          <p>The REEL LOUD Film and Arts Festival is an annual student-organized event at UC Santa Barbara that celebrates student films, art, music, dance, performance, and more. A tradition nearly thirty years old, we are known for our unique focus on student-made, silent films with a twist - each film premieres with a band playing musical accompaniment live on stage.</p>
+          <p>In addition to our famed film screening, we host a courtyard reception that features original student art, live performances from local bands and DJs, custom photo booths, interactive art displays, and a silent auction - the proceeds of which are donated to a local Santa Barbara charity. REEL LOUD aims to exhibit art in all shapes, sizes, and media, and unites the people of UCSB, Isla Vista, and Santa Barbara for a night of celebrating the immense creativity that exists within our local community.</p>
+          <p>Our committee for the 2019 Festival is made of 23 diverse students who have been working since September to organize this massive event and make it bigger than ever before. The perspectives that have led this festival range from art, to computer science. We aren’t just for art students - we are an opportunity for every individual in our Santa Barbara community to jubilate in each other’s self expression. </p>
+          <p>For this year, we invite you to “Escape to REEL LOUD.” Take a break from the dreariness of school work, chores, and whatever blues have you down, and come explore a new world of sights, sounds, and excitement as you have never seen before. The door is open to you, you only need to step inside…</p>
+          <br>
+          <br>
+        </div>
+    </div>
+
+    
+   <nav class="nav">
+        <ul>
+            <li> <button onclick="location.href='preLaunch.html'" id="home">Home</button> </li>
+            <li> <button onclick="location.href='about.html'" id="about">About</button> </li>
+            <li> <button onclick="location.href='rules.html'" id="rules">Rules</button> </li>
+            <li> <button onclick="location.href='contact.html'" id="contacts">Contact</button> </li>
+        </ul>
+    </nav>
+</body>
+
+<script type="text/javascript">
+
+    function shrinkWhoWeAre(){
+        var whoweare = document.getElementById('whoweare');
+        whoweare.style.position = "absolute";
+        whoweare.style.right =  window.innerWidth *0.28 + 'px';
+        whoweare.style.width = 45 + '%';
+    }
+    shrinkWhoWeAre();
+</script>
+
+</html>

@@ -1,0 +1,116 @@
+html{
+    background-color: white;
+    margin:0;
+}
+@font-face {
+    font-family: 'engebrechtreexpanded';
+    src: url('engebrechtre ex.ttf'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+#cs{
+    position: absolute;
+    color: #7B1600;
+    font-family: 'engebrechtreexpanded', sans-serif;
+    font-size: 3rem;
+    left: 53%;
+    top: 40%;
+}
+#logo{
+    position:fixed;
+    top: -20px;
+    width:15%;
+}
+#left{
+    width: 30%;
+    position: absolute;
+    top: 15%;
+    left: 35%;
+    transition: transform 5s;
+    transform-origin: left;
+}
+#right{
+    width: 30%;
+    position: absolute;
+    top: 15%;
+    right: 5%;
+    transition: transform 5s;
+    transform-origin: right;
+
+} 
+
+.nav ul{
+    list-style: none;
+    position: fixed;
+    bottom:0;
+    left:0;
+    margin:0 auto;
+    padding:0;
+    width: 100%;
+    background: rgba(128, 0, 0, 1);
+    height: 8%;
+}
+
+.nav ul li{
+    float: left; 
+    width: 25%;
+}
+.nav ul li:hover{
+    background-color: white;
+    transition: 0.4s ease-in;
+}
+.nav ul li button:hover{
+    color:rgba(128, 0, 0, 1);
+}
+.nav ul li button{
+    padding: 2%;
+    width:100%;
+    background-color: transparent;
+    color: white;
+    border:none;
+    text-decoration: none;
+    font-family: 'engebrechtreexpanded', sans-serif;
+    font-size: 30px;
+    text-align: center;
+}
+ /*for about page*/
+ 
+ .aboutAll .aboutText{
+     width: 65%;
+     position: absolute;
+     left:20%;
+     top:18%;
+ }
+ .aboutAll .aboutText p{
+    font-family: 'Ubuntu Condensed', sans-serif;
+    line-height: 2rem;
+    letter-spacing: 1.4px;
+    font-size: 1rem;
+    color:black;
+ }
+ /*for rules page*/
+ .rulesAll{
+    width: 65%;
+    position: absolute;
+    left:20%;
+    top:10%;
+    font-family: 'Ubuntu Condensed', sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.5rem;
+    font-size: 1rem;
+    color:black;
+ }
+.rulesAll p{
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+ }
+
+ .red{
+     color:red;
+     font-weight: bold;
+ }
+ .black{
+    font-weight: bold;
+ }
