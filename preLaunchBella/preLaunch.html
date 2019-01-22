@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PreLaunch</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body onresize="onResize()">
+    <div>
+        <img id="logo" src="logo.png" width="20%">
+        <p id="cs">Coming soon...</p>
+        <img id="left" src="leftGate.png" width="20%">
+        <img id="right" src="rightGate.png" width= "20%">
+        
+    </div>
+
+    <nav class="nav">
+        <ul>
+            <li> <button onclick="location.href='preLaunch.html'" id="home">Home</button> </li>
+            <li> <button onclick="location.href='about.html'" id="about">About</button> </li>
+            <li> <button onclick="location.href='rules.html'" id="rules">Rules</button> </li>
+            <li> <button onclick="location.href='contact.html'" id="contacts">Contacts</button> </li>
+        </ul>
+    </nav>
+</body>
+<script>
+    var left = document.getElementById('left');
+    var right = document.getElementById('right');
+    left.onmouseover = function(){
+        left.style.transform = "scale(0.5, 1)";
+        right.style.transform = "scale(0.5, 1)";
+    }
+    right.onmouseover = function(){
+        left.style.transform = "scale(0.5, 1)";
+        right.style.transform = "scale(0.5, 1)";
+    }
+    left.onmouseleave = function(){
+        left.style.transform = "scale(1, 1)";
+        right.style.transform = "scale(1, 1)";
+    }
+    right.onmouseleave = function(){
+        left.style.transform = "scale(1, 1)";
+        right.style.transform = "scale(1, 1)";
+    }
+    function onResize() {
+        var left = document.getElementById('left');
+        var cs = document.getElementById('cs');
+        var height = left.getAttribute('top');
+        console.log(height);
+        cs.style.fontSize = window.innerHeight * 0.05 + 'px';
+        cs.style.position = "absolute";
+        cs.style.top = (height + 30) + '%';
+    }
+    
+</script>
+</html>
