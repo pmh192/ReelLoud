@@ -270,3 +270,7 @@ body {
     position: fixed;
     top: 80%; left: 10%;
 }
+#finance{
+     position: absolute;
+     left:40%;
+ }
