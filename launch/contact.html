@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>Contact</title>
+
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body>
+  <div class="margin-0 padding-0 navbar">
+    <div id="navbar" class="w-100 margin-0 padding-0 row contactnav">
+      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+      <div id="homenavelem" class="col-md-2 col-sm-12 navlinkContainerActive homenavelem" onclick="location.href='index.html'">
+        <center><a class="navlink centerVert">Home</a></center>
+      </div>
+      <div id="aboutnavelem" class="col-md-2 col-sm-12 navlinkContainerActive aboutnavelem" onclick="location.href='about.html'">
+        <center><a class="navlink centerVert">About</a></center>
+      </div>
+      <div class="col-md-2 d-none d-md-block navlinkContainer">
+        <center><img src="logo.png" class="w-50"></center>
+      </div>
+      <div id="rulesnavelem" class="col-md-2 col-sm-12 navlinkContainerActive rulesnavelem" onclick="location.href='rules.html'">
+        <center><a class="navlink centerVert">Rules</a></center>
+      </div>
+      <div id="contactnavelem" class="col-md-2 col-sm-12 navlinkContainerActive contactnavelem" onclick="location.href='contact.html'">
+        <center><a class="navlink centerVert">Contact</a></center>
+      </div>
+
+      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+      <div class="d-md-none">
+        <center><img src="logo.png" class="w-25"></center>
+      </div>
+    </div>
+  </div>
+  <div class="contact">
+    <form method="post" enctype="multipart/form-data" action="http://www.reel-loud.com/scripts/form-u1177.php">
+
+       <div data-required="true">
+          <label class="label">Name:</label><br/>
+          <input class="input" type="text" spellcheck="false" name="custom_U1182" tabindex="1" placeholder="Enter Name">
+       </div>
+
+       <div data-required="true">
+          <label>Email:</label> <br/>
+          <input class="input" type="email" spellcheck="false" id="widgetu1189_input" name="Email" tabindex="2" placeholder="Enter Email"/>
+       </div>
+
+       <div id="widgetu1178" data-required="false">
+        <label id="u1179-4">Message:</label><br/>
+
+        <textarea class="textarea" id="widgetu1178_input" name="custom_U1178" tabindex="3" placeholder="Enter Your Message"></textarea>
+
+       <div data-required="true">
+          <label>Cell Phone:</label><br/>
+          <input class="input" type="tel" spellcheck="false" id="widgetu1228_input" name="custom_U1228" tabindex="4" placeholder="Enter Phone Number">
+       </div>
+
+       <button class="submit" id="u1193-4" type="submit" value="Submit" tabindex="5">
+        <div style="margin-top:-11px;height:11px;">
+         <p>Submit</p>
+        </div>
+       </button>
+
+        <p style="display: none;">Submitting Form...</p>
+        <p style="display: none;">The server encountered an error.</p>
+        <p style="display: none;">Form received.</p>
+    </div>
+    </form>
+  </div>
+</body>
+
+<script type="text/javascript">
+  var page = "contact";
+  var pages = ["home", "about", "rules", "contact"];
+
+  var defaultClass = page + "nav";
+  pages.forEach(function (currPage) {
+    var newClass = currPage + "nav";
+    console.log(newClass);
+
+    $("#" + currPage + "navelem").mouseenter(function() {
+         $("#navbar").removeClass(defaultClass);
+         $("#navbar").addClass(currPage + "nav");
+     });
+    
+     $("#" + currPage + "navelem").mouseleave(function() {
+         $("#navbar").removeClass(currPage + "nav");
+         $("#navbar").addClass(defaultClass);
+     });
+  });
+</script>
+
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en" class="h-100">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Reel Loud</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body onresize="onResize()" class="h-100">
+  <div class="margin-0 padding-0 navbar">
+    <div id="navbar" class="w-100 margin-0 padding-0 row homenav">
+      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+      <div id="homenavelem" class="col-md-2 col-sm-12 navlinkContainerActive homenavelem" onclick="location.href='index.html'">
+        <center><a class="navlink centerVert">Home</a></center>
+      </div>
+      <div id="aboutnavelem" class="col-md-2 col-sm-12 navlinkContainerActive aboutnavelem" onclick="location.href='about.html'">
+        <center><a class="navlink centerVert">About</a></center>
+      </div>
+      <div class="col-md-2 d-none d-md-block navlinkContainer">
+        <center><img src="logo.png" class="w-50"></center>
+      </div>
+      <div id="rulesnavelem" class="col-md-2 col-sm-12 navlinkContainerActive rulesnavelem" onclick="location.href='rules.html'">
+        <center><a class="navlink centerVert">Rules</a></center>
+      </div>
+      <div id="contactnavelem" class="col-md-2 col-sm-12 navlinkContainerActive contactnavelem" onclick="location.href='contact.html'">
+        <center><a class="navlink centerVert">Contact</a></center>
+      </div>
+
+      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+      <div class="d-md-none">
+        <center><img src="logo.png" class="w-25"></center>
+      </div>
+    </div>
+  </div>
+  
+  <div class="h-100">
+    <div class="row margin-0 h-100">
+      <div class="col-2 h-100"></div>
+      <div class="col-4 h-100">
+        <div id="page1Left" class="centerVert">
+          <div class="h-50">
+            <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VcIE8cuy7Yg"></iframe>
+          </div>
+          <div class="h-50" style="background-color: white">
+            More stuff to go here
+          </div>
+         </div>
+      </div>
+      <div class="col-4 h-100">
+        <img id="poster" onload="onResize()" class="d-block w-100 centerVert" style="padding: 10px" src="poster.jpg">
+      </div>
+      <div class="col-2"></div>
+    </div>
+  </div> 
+
+    
+</body>
+<script>
+
+  var page = "home";
+
+  function onResize() {
+      $('#page1Left').height($("#poster").height());
+    }
+    onResize();
+
+  var page = "home";
+  var pages = ["home", "about", "rules", "contact"];
+
+  var defaultClass = page + "nav";
+  pages.forEach(function (currPage) {
+    var newClass = currPage + "nav";
+    console.log(newClass);
+
+    $("#" + currPage + "navelem").mouseenter(function() {
+         $("#navbar").removeClass(defaultClass);
+         $("#navbar").addClass(currPage + "nav");
+     });
+    
+     $("#" + currPage + "navelem").mouseleave(function() {
+         $("#navbar").removeClass(currPage + "nav");
+         $("#navbar").addClass(defaultClass);
+     });
+  });
+
+</script>
+</html>
