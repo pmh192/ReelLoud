@@ -6,7 +6,7 @@
     <title>Contact</title>
 
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
@@ -39,39 +39,44 @@
       </div>
     </div>
   </div>
+
+
+  <p class="contactText">Have any questions? Feel free to email us below!</p>
+  <p>&nbsp;</p>
   <div class="contact">
-    <form method="post" enctype="multipart/form-data" action="http://www.reel-loud.com/scripts/form-u1177.php">
+    <form id="emailForm" onsubmit="sendEmail()" action="javascript:void(0);">
 
        <div data-required="true">
           <label class="label">Name:</label><br/>
           <input class="input" type="text" spellcheck="false" name="custom_U1182" tabindex="1" placeholder="Enter Name">
        </div>
+       <br/>
 
        <div data-required="true">
-          <label>Email:</label> <br/>
+          <label class="label">Email:</label> <br/>
           <input class="input" type="email" spellcheck="false" id="widgetu1189_input" name="Email" tabindex="2" placeholder="Enter Email"/>
        </div>
+       <br/>
 
        <div id="widgetu1178" data-required="false">
-        <label id="u1179-4">Message:</label><br/>
-
+        <label class="label">Message:</label><br/>
         <textarea class="textarea" id="widgetu1178_input" name="custom_U1178" tabindex="3" placeholder="Enter Your Message"></textarea>
+      </div>
+      <br/>
 
        <div data-required="true">
-          <label>Cell Phone:</label><br/>
+          <label class="label">Cell Phone:</label><br/>
           <input class="input" type="tel" spellcheck="false" id="widgetu1228_input" name="custom_U1228" tabindex="4" placeholder="Enter Phone Number">
        </div>
+       <br/>
 
-       <button class="submit" id="u1193-4" type="submit" value="Submit" tabindex="5">
-        <div style="margin-top:-11px;height:11px;">
-         <p>Submit</p>
-        </div>
+       <button class="submit btn btn-dark" type="submit" value="Submit" tabindex="5">
+        Submit
        </button>
 
-        <p style="display: none;">Submitting Form...</p>
-        <p style="display: none;">The server encountered an error.</p>
-        <p style="display: none;">Form received.</p>
-    </div>
+        <span id="submitting" class="label" style="display: none;">Submitting Form...</span>
+        <span id="internalError" class="label" style="display: none;">Server error. Please try again later</span>
+        <span id="formReceived" class="label" style="display: none;">Form received.</span>
     </form>
   </div>
 </body>
@@ -83,7 +88,6 @@
   var defaultClass = page + "nav";
   pages.forEach(function (currPage) {
     var newClass = currPage + "nav";
-    console.log(newClass);
 
     $("#" + currPage + "navelem").mouseenter(function() {
          $("#navbar").removeClass(defaultClass);
@@ -95,6 +99,41 @@
          $("#navbar").addClass(defaultClass);
      });
   });
+
+  function sendEmail(e) {
+    var form = $("#emailForm");
+    var url = "http://reel-loud.com/scripts/form-u1177.php";
+
+    $("#submitting").show();
+    $("#internalError").hide();
+    $("#formReceived").hide();
+
+    $.ajax({
+           type: "POST",
+           url: url,
+           data: form.serialize(),
+           success: function(data) {
+              var success = false;
+              try {
+                success = JSON.parse(data).FormResponse.success;
+              } catch (ignored) { }
+
+              $("#submitting").hide();
+
+              if (success) {
+                $("#internalError").hide();
+                $("#formReceived").show();
+              } else {
+                $("#internalError").show();
+                $("#formReceived").hide();
+              }
+           }
+         });
+
+    return false;
+}
+
+
 </script>
 
 </html>
