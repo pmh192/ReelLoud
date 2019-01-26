@@ -12,23 +12,24 @@
 
 </head>
 <body onresize="onResize()">
+  <div class="margin-0 padding-0 navbar">
     <div id="navbar" class="w-100 margin-0 padding-0 row rulesnav">
       <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
 
       <div id="homenavelem" class="col-md-2 col-sm-12 navlinkContainerActive homenavelem" onclick="location.href='index.html'">
-        <center><a class="navlink centerVert">Home</a></center>
+        <div class="centerVertContainer"><a class="navlink">Home</a></div>
       </div>
       <div id="aboutnavelem" class="col-md-2 col-sm-12 navlinkContainerActive aboutnavelem" onclick="location.href='about.html'">
-        <center><a class="navlink centerVert">About</a></center>
+        <div class="centerVertContainer"><a class="navlink">About</a></div>
       </div>
       <div class="col-md-2 d-none d-md-block navlinkContainer">
-        <center><img src="logo.png" class="w-50"></center>
+        <center class="h-100"><img src="logo.png" class="w-50"></center>
       </div>
       <div id="rulesnavelem" class="col-md-2 col-sm-12 navlinkContainerActive rulesnavelem" onclick="location.href='rules.html'">
-        <center><a class="navlink centerVert">Rules</a></center>
+        <div class="centerVertContainer"><a class="navlink">Rules</a></div>
       </div>
       <div id="contactnavelem" class="col-md-2 col-sm-12 navlinkContainerActive contactnavelem" onclick="location.href='contact.html'">
-        <center><a class="navlink centerVert">Contact</a></center>
+        <div class="centerVertContainer"><a class="navlink">Contact</a></div>
       </div>
 
       <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
@@ -37,6 +38,7 @@
         <center><img src="logo.png" class="w-25"></center>
       </div>
     </div>
+  </div>
 
     <div id="content" class="aboutTextContainer" style="padding-top: 12px">
       <center id="rulesTitle">Rules</center>

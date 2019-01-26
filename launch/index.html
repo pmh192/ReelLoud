@@ -20,19 +20,19 @@
       <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
 
       <div id="homenavelem" class="col-md-2 col-sm-12 navlinkContainerActive homenavelem" onclick="location.href='index.html'">
-        <center><a class="navlink centerVert">Home</a></center>
+        <div class="centerVertContainer"><a class="navlink">Home</a></div>
       </div>
       <div id="aboutnavelem" class="col-md-2 col-sm-12 navlinkContainerActive aboutnavelem" onclick="location.href='about.html'">
-        <center><a class="navlink centerVert">About</a></center>
+        <div class="centerVertContainer"><a class="navlink">About</a></div>
       </div>
       <div class="col-md-2 d-none d-md-block navlinkContainer">
-        <center><img src="logo.png" class="w-50"></center>
+        <center class="h-100"><img src="logo.png" class="w-50"></center>
       </div>
       <div id="rulesnavelem" class="col-md-2 col-sm-12 navlinkContainerActive rulesnavelem" onclick="location.href='rules.html'">
-        <center><a class="navlink centerVert">Rules</a></center>
+        <div class="centerVertContainer"><a class="navlink">Rules</a></div>
       </div>
       <div id="contactnavelem" class="col-md-2 col-sm-12 navlinkContainerActive contactnavelem" onclick="location.href='contact.html'">
-        <center><a class="navlink centerVert">Contact</a></center>
+        <div class="centerVertContainer"><a class="navlink">Contact</a></div>
       </div>
 
       <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
@@ -45,20 +45,34 @@
   
   <div class="h-100">
     <div class="row margin-0 h-100">
-      <div class="col-2 h-100"></div>
-      <div class="col-4 h-100">
-        <div id="page1Left" class="centerVert">
+      <div class="col-2"></div>
+      <div class="col-md-4 col-sm-12 h-100">
+        <div id="page1Left" class="centerVert max-h-100" style="padding: 10px">
           <div class="h-50">
             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/VcIE8cuy7Yg"></iframe>
           </div>
-          <div class="socialMediaLinks">
-            <a target="_blank" href="https://www.facebook.com/ReelLoud/" class="fa fa-facebook"></a>  
-            <a target="_blank" href="https://www.instagram.com/reelloudfilmfestival/" class="fa fa-instagram"></a>
+          <div class="socialMediaLinks h-50" style="display:flex;justify-content:center;align-items:center;">
+            <div class="row w-100">
+              <div class="col-1"></div>
+              <div class="col-5">
+                <center>
+                  <a target="_blank" href="https://www.facebook.com/ReelLoud/" class="fa fa-facebook"></a>
+                </center>
+              </div>
+              <div class="col-5">
+                <center>
+                  <a target="_blank" href="https://www.instagram.com/reelloudfilmfestival/" class="fa fa-instagram"></a>
+                </center>
+              </div>
+              <div class="col-1"></div>
+          </div>
           </div>
          </div>
       </div>
-      <div class="col-4 h-100">
-        <img id="poster" onload="onResize()" class="d-block w-100 centerVert" style="padding: 10px" src="poster.jpg">
+      <div class="col-md-4 col-sm-12 h-100">
+        <center>
+          <img id="poster" onload="onResize()" class="d-block max-w-100 max-h-100 centerVert" style="padding: 10px" src="poster.png">
+        </center>
       </div>
       <div class="col-2"></div>
     </div>
@@ -71,9 +85,16 @@
   var page = "home";
 
   function onResize() {
-      $('#page1Left').height($("#poster").height());
+    if (window.innerWidth >= 768) {
+      $("#page1Left").addClass("centerVert");
+      $("#poster").addClass("centerVert");
+    } else {
+      $("#page1Left").removeClass("centerVert");
+      $("#poster").removeClass("centerVert");
     }
-    onResize();
+    $("#page1Left").height($("#poster").height());
+  }
+  onResize();
 
   var page = "home";
   var pages = ["home", "about", "rules", "contact"];

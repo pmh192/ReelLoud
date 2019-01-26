@@ -169,8 +169,11 @@ body {
     width: 100%;
 }
 
+.navlinkContainerActive {
+    min-height: 45px !important;
+}
+
 .navlinkContainerActive a {
-    padding:10px;
     width:100%;
     background-color: transparent;
     color: white !important;
@@ -193,8 +196,8 @@ body {
     text-align: left;
     font-size: 18px;
     line-height: 18px;
-    font-family: ingra, sans-serif;
     font-weight: 400;
+    font-family: 'Ubuntu Condensed';
 }
 
 .contact {
@@ -211,12 +214,13 @@ body {
     line-height: 18px;
     font-family: ingra, sans-serif;
     font-weight: 400;
+    line-height: 1.5;
 }
 
 .textarea {
     width: 328px;
     height: 68px;
-    color: #C4C4C4;
+    color: black;
     font-family: ingra, sans-serif;
     font-style: italic;
     font-weight: 200;
@@ -236,6 +240,14 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
+}
+
+.centerVertContainer {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+    height: 100%;
 }
 
 .socialMediaLinks .fa {
@@ -259,23 +271,39 @@ body {
   .fa-facebook {
     background: #3B5998;
     color: white;
-    position: fixed;
-    top: 80%; left: 3%;
   }
   
   /* Instagram */
   .fa-instagram {
     background: #fb3958;
     color: white;
-    position: fixed;
-    top: 80%; left: 10%;
 }
 #finance{
      position: absolute;
      left:40%;
  }
-#content #rulesTitle{
+
+
+#rulesTitle {
     font-size: 3rem;
-    font-family: 'Ubuntu Condensed', sans-serif;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    letter-spacing: 7px;
     color:white;
+}
+
+.max-w-100 {
+    max-width: 100% !important;
+}
+
+.max-h-100 {
+    max-height: 100% !important;
+}
+
+.min-w-100 {
+    min-width: 100% !important;
+}
+
+.min-h-100 {
+    min-height: 100% !important;
 }
