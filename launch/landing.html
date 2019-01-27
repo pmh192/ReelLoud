@@ -1,0 +1,147 @@
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="style1.css">
+		<link href="https://fonts.googleapis.com/css?family=Ubuntu+Condensed" rel="stylesheet"> 
+        <title>REEL LOUD film festival</title>
+        <style>
+            body{
+                background: url('pictures/space2.jpg');
+                background-size: cover;
+                margin: 0px;
+            }
+
+            @font-face {
+                font-family: 'engebrechtreexpanded';
+                src: url('engebrechtre ex.ttf'); 
+                    
+                font-weight: normal;
+                font-style: normal;
+
+            }
+
+            .bg {
+                height: 100%; 
+
+
+                /* Center and scale the image nicely */
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                position: relative;
+            }
+
+            .logo {
+                position: fixed;
+                left: 15%;
+                top:25%;
+            }
+
+            .bg .escape a{
+                font-size: 3rem;
+                color: white;
+                /*font-family: 'Courier New', Courier, monospace;*/
+                font-family: engebrechtreexpanded;
+                text-decoration: none;
+                padding: 30px;
+                position: fixed;
+                top: 68%; left:15%;
+                border: 5px solid white;
+                border-radius: 30px;
+
+            }
+            div p a:hover{
+                background-color: rgba(255, 255, 102, 0.4);
+            }
+            /* Slideshow container */
+            .slideshow-container {
+              width: 30%;
+              height: 30%;
+              position: absolute;
+              top:3%;
+              right:20%;
+            }
+          
+            .mySlides{
+                display: none;
+            }
+          
+           
+          
+            .active{
+                background-color: #717171;
+            }
+          
+            /* Fading animation */
+            .fade {
+              -webkit-animation-name: fade;
+              -webkit-animation-duration: 1.5s;
+              animation-name: fade;
+              animation-duration: 1.5s;
+            }
+          
+            @-webkit-keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+          
+            @keyframes fade {
+              from {opacity: .4} 
+              to {opacity: 1}
+            }
+          
+        </style>
+	</head>
+	<body>
+		<div class="bg">
+            <img src="logo2.png" class="logo"></img>
+            <p class="escape"><a href="content.html">Escape</a></p>
+        </div>
+        <div class="slideshow-container">
+
+            <div class="mySlides fade">
+              <!--<div class="numbertext">1 / 4</div>-->
+              <img src="red.png" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              
+              <img src="blue.png" style="width:100%">
+            </div>
+            
+            <div class="mySlides fade">
+              
+              <img src="yellow.png" style="width:100%">
+            </div>
+            <div class="mySlides fade">
+    
+                <img src="green.png" style="width:100%">
+            </div>
+            
+        </div>
+	</body>
+
+	<script type="text/javascript">
+        var slideIndex = 0;
+        var slides = document.getElementsByClassName("mySlides");
+        //var dots = document.getElementsByClassName('dot');
+        showSlides();
+
+        function showSlides() {
+
+            if(slideIndex > 0){
+                slides[slideIndex-1].style.display = "none";
+                //dots[slideIndex-1].style.backgroundColor = "#bbb";
+            }
+            if(slideIndex >= slides.length) {slideIndex = 0;}
+            slides[slideIndex].style.display = "block";
+            //dots[slideIndex].style.backgroundColor = "black";
+            
+            slideIndex++;
+            setTimeout(showSlides, 2000);
+        }
+	</script>
+</html>
