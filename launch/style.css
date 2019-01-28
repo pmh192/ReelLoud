@@ -121,7 +121,7 @@ body {
 }
 
 .rulesnav {
-    background: #edd015;
+    background: #FFC528;
     transition: 0.8s;
 }
 
@@ -142,7 +142,7 @@ body {
 }
 
 .rulesnavelem:hover {
-    background-color: rgba(255, 240, 70,0.7);
+    background-color: rgba(251, 230, 76,0.7);
     transition: 0.8s;
     cursor: pointer;
 }
