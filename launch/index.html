@@ -9,73 +9,80 @@
     <title>Reel Loud</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
-<body onresize="onResize()" class="h-100">
-  <div class="margin-0 padding-0 navbar">
-    <div id="navbar" class="w-100 margin-0 padding-0 row homenav">
-      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
-
-      <div id="homenavelem" class="col-md-2 col-sm-12 navlinkContainerActive homenavelem" onclick="location.href='index.html'">
-        <div class="centerVertContainer"><a class="navlink">Home</a></div>
-      </div>
-      <div id="aboutnavelem" class="col-md-2 col-sm-12 navlinkContainerActive aboutnavelem" onclick="location.href='about.html'">
-        <div class="centerVertContainer"><a class="navlink">About</a></div>
-      </div>
-      <div class="col-md-2 d-none d-md-block navlinkContainer">
-        <center class="h-100"><img src="logo.png" class="w-50"></center>
-      </div>
-      <div id="rulesnavelem" class="col-md-2 col-sm-12 navlinkContainerActive rulesnavelem" onclick="location.href='rules.html'">
-        <div class="centerVertContainer"><a class="navlink">Rules</a></div>
-      </div>
-      <div id="contactnavelem" class="col-md-2 col-sm-12 navlinkContainerActive contactnavelem" onclick="location.href='contact.html'">
-        <div class="centerVertContainer"><a class="navlink">Contact</a></div>
-      </div>
-
-      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
-
-      <div class="d-md-none">
-        <center><img src="logo.png" class="w-25"></center>
-      </div>
-    </div>
-  </div>
-  
+<body onresize="onResize()" class="h-100 spacebg">
   <div class="h-100">
-    <div class="row margin-0 h-100">
-      <div class="col-2"></div>
-      <div class="col-md-4 col-sm-12 h-100">
-        <div id="page1Left" class="centerVert max-h-100" style="padding: 10px">
-          <div class="h-50">
-            
-            <iframe width=100% height=100% src="https://www.youtube.com/embed/nr3KyReaAoo" allowfullscreen></iframe>
+    <div id="escapeButtonContainer" class="h-100 w-100 escapeButtonContainer" style="display: none">
+      <div><a class="escape" href="javascript:void(0);" onclick="escape()">Escape</a></div>
+    </div>
+    <div id="HomeContainer" class="h-100" style="display: none;">
+      <div class="margin-0 padding-0 navbar">
+        <div id="navbar" class="w-100 margin-0 padding-0 row homenav">
+          <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+          <div id="homenavelem" class="col-2 navlinkContainerActive homenavelem" onclick="location.href='index.html'">
+            <div class="centerVertContainer"><a class="navlink">Home</a></div>
           </div>
-          <div class="socialMediaLinks h-50" style="display:flex;justify-content:center;align-items:center;">
-            <div class="row w-100">
-              <div class="col-1"></div>
-              <div class="col-5">
-                <center>
-                  <a target="_blank" href="https://www.facebook.com/ReelLoud/" class="fa fa-facebook"></a>
-                </center>
-              </div>
-              <div class="col-5">
-                <center>
-                  <a target="_blank" href="https://www.instagram.com/reelloudfilmfestival/" class="fa fa-instagram"></a>
-                </center>
-              </div>
-              <div class="col-1"></div>
+          <div id="aboutnavelem" class="col-2 navlinkContainerActive aboutnavelem" onclick="location.href='about.html'">
+            <div class="centerVertContainer"><a class="navlink">About</a></div>
           </div>
+          <div class="col-2 d-none d-md-block navlinkContainer">
+            <center class="h-100"><img src="logo.png" class="w-50"></center>
           </div>
-         </div>
+          <div id="rulesnavelem" class="col-2 navlinkContainerActive rulesnavelem" onclick="location.href='rules.html'">
+            <div class="centerVertContainer"><a class="navlink">Rules</a></div>
+          </div>
+          <div id="contactnavelem" class="col-2 navlinkContainerActive contactnavelem" onclick="location.href='contact.html'">
+            <div class="centerVertContainer"><a class="navlink">Contact</a></div>
+          </div>
+
+          <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+          <div class="d-md-none">
+            <center><img src="logo.png" class="w-25"></center>
+          </div>
+        </div>
       </div>
-      <div class="col-md-4 col-sm-12 h-100">
-        <center>
-          <img id="poster" onload="onResize()" class="d-block max-w-100 max-h-100 centerVert" style="padding: 10px" src="poster.png">
-        </center>
+
+      <div class="h-100">
+        <div class="row margin-0 h-100">
+          <div class="col-2"></div>
+          <div class="col-md-4 col-sm-12 h-100">
+            <div id="page1Left" class="centerVert max-h-100" style="padding: 10px">
+              <div class="h-50">
+
+                <iframe width=100% height=100% src="https://www.youtube.com/embed/nr3KyReaAoo" allowfullscreen></iframe>
+              </div>
+              <div class="socialMediaLinks h-50" style="display:flex;justify-content:center;align-items:center;">
+                <div class="row w-100">
+                  <div class="col-1"></div>
+                  <div class="col-5">
+                    <center>
+                      <a target="_blank" href="https://www.facebook.com/ReelLoud/" class="fa fa-facebook"></a>
+                    </center>
+                  </div>
+                  <div class="col-5">
+                    <center>
+                      <a target="_blank" href="https://www.instagram.com/reelloudfilmfestival/" class="fa fa-instagram"></a>
+                    </center>
+                  </div>
+                  <div class="col-1"></div>
+              </div>
+              </div>
+             </div>
+          </div>
+          <div class="col-md-4 col-sm-12 h-100">
+            <center>
+              <img id="poster" onload="onResize()" class="d-block max-w-100 max-h-100 centerVert" style="padding: 10px" src="animation5.gif">
+            </center>
+          </div>
+          <div class="col-2"></div>
+        </div>
       </div>
-      <div class="col-2"></div>
     </div>
   </div>
 
@@ -114,6 +121,36 @@
          $("#navbar").addClass(defaultClass);
      });
   });
+
+  function escape() {
+    $("#HomeContainer").fadeIn(600);
+    onResize();
+    $("#escapeButtonContainer").fadeOut(600);
+    document.cookie = "escaped=true;";
+  }
+
+  function cookieExists(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+      var c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  if (!cookieExists("escaped")) {
+    $("#escapeButtonContainer").show();
+  } else {
+    $("#HomeContainer").show();
+    onResize();
+  }
 
 </script>
 </html>
