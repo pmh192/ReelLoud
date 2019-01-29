@@ -29,25 +29,27 @@
                 position: relative;
             }
 
-            .logo {
+            #logo {
                 position: fixed;
                 left: 15%;
                 top:15%;
+                
             }
 
-            .bg .escape a{
+            .bg #escape {
                 font-size: 3rem;
                 color: white;
                 font-family: engebrechtreexpanded;
                 text-decoration: none;
-                padding: 8px;
+                padding:10px;
                 position: fixed;
                 bottom: 20%; left:15%;
                 border: 5px solid white;
                 border-radius: 30px;
-
+                text-align: center;
+            
             }
-            .bg .escape a:hover{
+            .bg #escape:hover{
                 background-color: rgba(255, 255, 102, 0.4);
             }
             #animation{
@@ -61,13 +63,53 @@
             
         </style>
 	</head>
-	<body>
+	<body onresize="shrink()">
 		<div class="bg">
-            <img src="logo2.png" class="logo"></img>
-            <p class="escape"><a href="index.html">Escape</a></p>
+            <img src="logo2.png" id="logo"></img>
+            <a id="escape"href="index.html">Escape</a>
         </div>
-        <div id="animation">
-            <img src="animation5.gif">
+        <div>
+            <img id="animation" src="animation5.gif">
         </div>
-	</body>
+    </body>
+    <script type="text/javascript">
+
+        function shrink(){
+            var logo = document.getElementById('logo');
+            logo.style.position = "absolute";
+            logo.style.top =  window.innerHeight *0.2+ 'px';
+            logo.style.left =  window.innerWidth *0.15+ 'px';
+            logo.style.width =  window.innerWidth *0.2 + 'px';
+
+            
+            var animation = document.getElementById('animation');
+            animation.style.position = "absolute";
+            animation.style.top =  window.innerHeight *0.05 + 'px';
+            animation.style.right =  window.innerWidth *0.28 + 'px';
+            animation.style.height = window.innerHeight *0.85 + 'px';
+            animation.style.width = window.innerWidth *0.3 + 'px'; 
+
+            var escape = document.getElementById("escape");
+            escape.style.position = "absolute";
+            escape.style.left =  window.innerWidth *0.15 + 'px';
+            escape.style.bottom = window.innerHeight * 0.25 + 'px';
+            
+            
+            if(window.innerHeight > window.innerWidth){
+                escape.style.width = window.innerHeight *0.12+ 'px';
+                escape.style.height =  window.innerWidth *0.1 + 'px';
+                escape.style.fontSize = window.innerHeight * 0.04 + 'px';
+                escape.style.padding = 0.2 * escape.style.height + 'px';
+                
+            }
+            else if(window.innerHeight < window.innerWidth){
+                escape.style.width =  window.innerWidth *0.17 + 'px';
+                escape.style.height =  window.innerHeight *0.1 + 'px';
+                escape.style.fontSize = window.innerWidth * 0.04 + 'px';
+                escape.style.padding = 0.2 * escape.style.width + 'px';
+                
+            } 
+        }
+        shrink();
+    </script>
 </html>
