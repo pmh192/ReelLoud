@@ -333,3 +333,22 @@ body {
     align-items:center;
     position: fixed;
 }
+
+.time {
+    color: white;
+    font-size: 3rem;
+}
+
+.timeBottom {
+    color: white;
+    font-size: 1rem;
+}
+
+.link {
+    color: white;
+    text-decoration: underline;
+}
+
+.link:hover {
+    color: pink;
+}
