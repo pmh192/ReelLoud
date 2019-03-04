@@ -59,20 +59,22 @@
                 <div class="h-50 w-100">
                   <div class="row w-100">
                     <center class="w-100 timeBottom">
-                      <a href="https://www.facebook.com/events/285345065475530/" target="_blank" class="link">Yes, We’re Screening THAT Awards Show</a> in
+                      REEL LOUD starts in
                     </center>
                   </div>
                   <div class="row h-50">
-                    <div class="col-3"><center id="days-top" class="time"></center></div>
-                    <div class="col-3"><center id="hours-top" class="time"></center></div>
-                    <div class="col-3"><center id="minutes-top" class="time"></center></div>
-                    <div class="col-3"><center id="seconds-top" class="time"></center></div>
+                    <div class="w-20"><center id="weeks-top" class="time"></center></div>
+                    <div class="w-20"><center id="days-top" class="time"></center></div>
+                    <div class="w-20"><center id="hours-top" class="time"></center></div>
+                    <div class="w-20"><center id="minutes-top" class="time"></center></div>
+                    <div class="w-20"><center id="seconds-top" class="time"></center></div>
                   </div>
                   <div class="row h-50">
-                    <div class="col-3" id="days-bottom"><center class="timeBottom">Days</center></div>
-                    <div class="col-3" id="hours-bottom"><center class="timeBottom">Hours</center></div>
-                    <div class="col-3" id="minutes-bottom"><center class="timeBottom"><center>Minutes</center></div>
-                    <div class="col-3" id="seconds-bottom"><center class="timeBottom"><center>Seconds</center></div>
+                    <div class="w-20" id="weeks-bottom"><center class="timeBottom">Weeks</center></div>
+                    <div class="w-20" id="days-bottom"><center class="timeBottom">Days</center></div>
+                    <div class="w-20" id="hours-bottom"><center class="timeBottom">Hours</center></div>
+                    <div class="w-20" id="minutes-bottom"><center class="timeBottom"><center>Minutes</center></div>
+                    <div class="w-20" id="seconds-bottom"><center class="timeBottom"><center>Seconds</center></div>
                   </div>
                 </div>
 
@@ -181,10 +183,11 @@
   var minutes = seconds * 60;
   var hours = minutes * 60;
   var days = hours * 24;
-  var amounts = [days, hours, minutes, seconds];
-  var texts = ['days', 'hours', 'minutes', 'seconds'];
+  var weeks = days * 7;
+  var amounts = [weeks, days, hours, minutes, seconds];
+  var texts = ['weeks', 'days', 'hours', 'minutes', 'seconds'];
 
-  var start = new Date('February 24, 2019 17:00:00');
+  var start = new Date('May 17, 2019 17:00:00');
 
 
   function twoDigits(a) {
@@ -198,19 +201,20 @@
   function update() {
     var diff = start - (new Date());
 
-    var counts = [0, 0, 0, 0];
+    var counts = [0, 0, 0, 0, 0];
 
-    for (var i = 0; i < 4; i++) {
+    for (var i = 0; i < counts.length; i++) {
       while (diff >= amounts[i]) {
         counts[i] += 1;
         diff -= amounts[i];
       }
     }
 
-    $('#days-top').html(twoDigits(counts[0]));
-    $('#hours-top').html(twoDigits(counts[1]));
-    $('#minutes-top').html(twoDigits(counts[2]));
-    $('#seconds-top').html(twoDigits(counts[3]));
+    $('#weeks-top').html(twoDigits(counts[0]));
+    $('#days-top').html(twoDigits(counts[1]));
+    $('#hours-top').html(twoDigits(counts[2]));
+    $('#minutes-top').html(twoDigits(counts[3]));
+    $('#seconds-top').html(twoDigits(counts[4]));
   }
   update();
   setInterval(update, 500);

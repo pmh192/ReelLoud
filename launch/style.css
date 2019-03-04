@@ -353,3 +353,7 @@ body {
 .link:hover {
     color: pink;
 }
+
+.w-20 {
+    width: 20% !important;
+}
