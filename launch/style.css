@@ -357,3 +357,20 @@ body {
 .w-20 {
     width: 20% !important;
 }
+
+#ticket {
+    font-size: 3rem;
+    color: white;
+    font-family: engebrechtreexpanded;
+    text-decoration: none;
+    padding:10px;
+    position: fixed;
+    bottom: 60%; left:2%;
+    border: 5px solid white;
+    border-radius: 30px;
+    text-align: center;
+
+}
+#ticket:hover{
+    background-color:burlywood;
+}
