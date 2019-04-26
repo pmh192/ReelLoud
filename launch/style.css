@@ -39,7 +39,7 @@ body {
     margin-left: 15%;
 }
 
-.aboutTextContainer > p {
+.aboutTextContainer > p, .aboutText {
     font-family: 'UbuntuCondensedFont';
     font-size: 24px;
     letter-spacing: 2px;
@@ -116,22 +116,22 @@ body {
 }
 
 .homenav {
-    background: rgba(128,0,0,1);
+    background: rgba(128,0,0,1) !important;
     transition: 0.8s;
 }
 
 .rulesnav {
-    background: #FFC528;
+    background: #FFC528 !important;
     transition: 0.8s;
 }
 
 .aboutnav {
-    background: rgba(0,0,128,1);
+    background: rgba(0,0,128,1) !important;
     transition: 0.8s;
 }
 
 .contactnav {
-    background: rgba(0,128,0,1);
+    background: rgba(0,128,0,1) !important;
     transition: 0.8s;
 }
 
@@ -358,6 +358,7 @@ body {
     width: 20% !important;
 }
 
+
 #ticket {
     font-size: 3rem;
     color: white;
@@ -371,6 +372,15 @@ body {
     text-align: center;
 
 }
-#ticket:hover{
+
+#ticket:hover {
     background-color:burlywood;
+}
+
+.sponserText {
+   font-family: 'UbuntuCondensedFont';
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: white !important;
+    font-weight: bold; 
 }

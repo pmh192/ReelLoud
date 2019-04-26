@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <title>About</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+</head>
+<body onresize="onResize()" class="h-100">
+  <div class="margin-0 padding-0 navbar">
+    <div id="navbar" class="w-100 margin-0 padding-0 row aboutnav">
+      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+      <div id="homenavelem" class="col-md-2 col-sm-12 navlinkContainerActive homenavelem" onclick="location.href='index.html'">
+        <div class="centerVertContainer"><a class="navlink">Home</a></div>
+      </div>
+      <div id="aboutnavelem" class="col-md-2 col-sm-12 navlinkContainerActive aboutnavelem dropdown show" onclick="$('#dropdown-about').dropdown()">
+        <div class="centerVertContainer">
+          <a id="dropdown-about" class="navlink dropdown-toggle" data-toggle="dropdown">About</a>
+          <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <a class="dropdown-item" href="about.html">REEL LOUD</a>
+            <a class="dropdown-item" href="#">Committee</a>
+          </div>
+        </div>
+        
+      </div>
+      <div class="col-md-2 d-none d-md-block navlinkContainer">
+        <center class="h-100"><img src="logo.png" class="w-50"></center>
+      </div>
+      <div id="rulesnavelem" class="col-md-2 col-sm-12 navlinkContainerActive rulesnavelem" onclick="location.href='rules.html'">
+        <div class="centerVertContainer"><a class="navlink">Rules</a></div>
+      </div>
+      <div id="contactnavelem" class="col-md-2 col-sm-12 navlinkContainerActive contactnavelem" onclick="location.href='contact.html'">
+        <div class="centerVertContainer"><a class="navlink">Contact</a></div>
+      </div>
+
+      <div class="col-md-1 hidden-sm-down navlinkContainer"></div>
+
+      <div class="d-md-none">
+        <center><img src="logo.png" class="w-25"></center>
+      </div>
+    </div>
+  </div>
+
+  <div id="content" class="container" class="w-100">
+    <div class="row">
+      <div class="col-6"><img src="headshots/BDHeadshot.jpg" class="w-100"></div>
+      <div class="col-6">p</div>
+    </div>
+  </div>
+</body>
+
+<script type="text/javascript">
+
+  var page = "about";
+  var pages = ["home", "about", "rules", "contact"];
+
+  var defaultClass = page + "nav";
+  pages.forEach(function (currPage) {
+    var newClass = currPage + "nav";
+    console.log(newClass);
+
+    $("#" + currPage + "navelem").mouseenter(function() {
+          var toChange = [$("#navbar"), $("#dropdown-menu")]
+          for (var i = 0; i < toChange.length; i++) {
+            toChange[i].removeClass(defaultClass);
+            toChange[i].addClass(currPage + "nav");
+          }
+
+     });
+    
+     $("#" + currPage + "navelem").mouseleave(function() {
+        var toChange = [$("#navbar"), $("#dropdown-menu")]
+        for (var i = 0; i < toChange.length; i++) {
+           toChange[i].removeClass(currPage + "nav");
+           toChange[i].addClass(defaultClass);
+        }
+     });
+  });
+
+  function onResize() {
+      $("#content").height(window.innerHeight - $("#nav").height());
+  }
+  onResize();
+</script>
+
+</html>
