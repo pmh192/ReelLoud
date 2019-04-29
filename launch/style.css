@@ -359,20 +359,38 @@ body {
 }
 
 
-#ticket {
-    font-size: 2.5rem;
+.ticket {
+    font-size: 1.9rem;
     color: white;
     font-family: engebrechtreexpanded;
     text-decoration: none;
     padding:10px;
     border: 5px solid white;
+    background-color:black;
     border-radius: 30px;
     text-align: center;
 
 }
 
 #ticket:hover {
-    background-color:burlywood;
+    cursor: pointer;
+    transition: .8s;
+}
+
+.yellowBG:hover {
+    background-color: #FFC528;
+}
+
+.redBG:hover {
+    background: rgba(128,0,0,1);
+}
+
+.greenBG:hover {
+    background: rgba(0,128,0,1) !important;
+}
+
+.blueBG:hover {
+    background: rgba(0,0,128,1);
 }
 
 .sponserText {
@@ -381,4 +399,14 @@ body {
     letter-spacing: 2px;
     color: white !important;
     font-weight: bold; 
+}
+
+.line {
+    height: 3px;
+    border-color: white;
+}
+
+.committeeImage {
+    height: 400px;
+    padding: 20px;
 }

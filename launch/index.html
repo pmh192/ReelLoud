@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 <head>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="style.css"> <!-- style1.css references style.css. Different name used to prevent caching -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,8 +9,8 @@
     <title>Reel Loud</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 </head>
@@ -48,32 +48,32 @@
 
       <div class="h-100">
         <div class="row margin-0 h-100">
-          <div class="row w-100 margin-0" style="height: 20%">
+          <div class="row w-100 margin-0" style="height: 125px">
             <div class="col-12 row h-50 margin-0">
-              <div class="col-md-3"></div>
-              <div class="col-md-6 row margin-0">
+              <div class="col-md-2"></div>
+              <div class="col-md-8 row margin-0 padding-0">
                 <div class="w-20"><center id="weeks-top" class="time"></center></div>
                 <div class="w-20"><center id="days-top" class="time"></center></div>
                 <div class="w-20"><center id="hours-top" class="time"></center></div>
                 <div class="w-20"><center id="minutes-top" class="time"></center></div>
                 <div class="w-20"><center id="seconds-top" class="time"></center></div>
               </div>
-              <div class="col-md-3"></div>
+              <div class="col-md-2"></div>
             </div>
             <div class="col-12 row h-50 margin-0">
-              <div class="col-md-3"></div>
-              <div class="col-md-6 row margin-0">
+              <div class="col-md-2"></div>
+              <div class="col-md-8 row margin-0 padding-0">
                 <div class="w-20" id="weeks-bottom"><center class="timeBottom">Weeks</center></div>
                 <div class="w-20" id="days-bottom"><center class="timeBottom">Days</center></div>
                 <div class="w-20" id="hours-bottom"><center class="timeBottom">Hours</center></div>
                 <div class="w-20" id="minutes-bottom"><center class="timeBottom"><center>Minutes</center></div>
                 <div class="w-20" id="seconds-bottom"><center class="timeBottom"><center>Seconds</center></div>
               </div>
-              <div class="col-md-3"></div>
-
+              <div class="col-md-1"></div>
+              <hr class="row w-100 margin-0 line" />
             </div>
           </div>
-          <div class="row w-100" style="height: 80%">
+          <div class="row w-100 margin-0" style="height: 80%">
             <div class="col-2"></div>
             <div class="col-md-4 col-sm-12 h-100">
               <div id="page1Left" class="centerVert max-h-100" style="padding: 10px">
@@ -83,11 +83,9 @@
                 <div class="h-50" style="padding: 12px">
                   <div class="socialMediaLinks h-50 w-100">
                     <div class="h-100 w-100" style="display:flex;justify-content:center;align-items:center;">
-                      <center>
-                        <a id="ticket"href="https://events.ucsb.edu/event/28th-annual-reel-loud-film-and-arts-festival-2/">
-                          BUY TICKETS HERE
-                        </a>
-                      </center>
+                      <button id="ticket" onclick="window.open('https://events.ucsb.edu/event/28th-annual-reel-loud-film-and-arts-festival-2/','_blank')" class="w-100  ticket">
+                        BUY TICKETS HERE
+                      </button>
                     </div>
                     <div class="h-100 w-100" style="display:flex;justify-content:center;align-items:center;">
                       <div class="row w-100">
@@ -157,6 +155,22 @@
          $("#navbar").addClass(defaultClass);
      });
   });
+
+  var ticket = $("#ticket");
+  var ticketClasses = ["yellowBG", "redBG", "greenBG", "blueBG"];
+
+  var currentBG = Math.floor(Math.random() * ticketClasses.length);
+  ticket.addClass(ticketClasses[currentBG]);
+  ticket.mouseout(function() {
+    for (var i = 0; i < ticketClasses.length; i+=1) {
+      console.log(ticketClasses[i]);
+      ticket.removeClass(ticketClasses[i]);
+    }
+    currentBG += 1;
+    ticket.addClass(ticketClasses[currentBG%ticketClasses.length]);
+
+
+    });
 
   function escape() {
     $("#HomeContainer").fadeIn(600);
